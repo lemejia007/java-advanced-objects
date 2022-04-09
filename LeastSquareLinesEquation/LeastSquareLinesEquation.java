@@ -10,9 +10,11 @@
 // Import declarations 
 import java.io.File;
 import java.io.IOException;
-import java.lang.IllegalStateException; 
-import java.util.NoSuchElementException; 
-import java.util.Scanner; 
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.util.logging.Level; 
+import java.util.logging.Logger; 
+
 
 // Start of class LeastSquareLinesEquation 
 public class LeastSquareLinesEquation { 
@@ -22,6 +24,7 @@ public class LeastSquareLinesEquation {
 			
 		// Prompt user for a file 
 		String  fileName = getFileFromUser(); 
+		
 		try {
 			File file = new File(fileName);
 			Scanner fileScan = new Scanner(file);  
@@ -62,9 +65,18 @@ public class LeastSquareLinesEquation {
 		  System.out.printf("%n%s: y = %.5fx + %.5f%n", 
 		  								  "Equation of least squares line", m, b); 
 		}
-		catch (NoSuchElementException | IllegalStateException | IOException e) {
-			System.out.println("File could not open.");
+		catch (NoSuchElementException ex) {
+			Logger.getLogger(LeastSquareLinesEquation.class.getName()).log(Level.SEVERE, 
+																																     null, ex); 
+			System.out.println("File Could not open.\nExiting program."); 
+			System.exit(1); // Exiting program 
+		} catch (IOException ioe) {
+			Logger.getLogger(LeastSquareLinesEquation.class.getName()).log(Level.SEVERE, 
+					                                                           null, ioe); 
+			System.out.println("File Could not open.\nExiting program."); 
+			System.exit(1); // Exiting program
 		}
+			
 	
 	} // End of main method 
 	
