@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="451.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="regexhelper.RegexHelperController">
+   <children>
+      <TextField fx:id="regexToTestTextField" layoutX="144.0" layoutY="21.0" prefHeight="25.0" prefWidth="293.0" />
+      <TextArea fx:id="textToMatchAgainstTextArea" layoutX="144.0" layoutY="57.0" prefHeight="115.0" prefWidth="293.0" />
+      <TextField fx:id="replaceMatchWithTextField" layoutX="144.0" layoutY="192.0" prefHeight="25.0" prefWidth="293.0" />
+      <TextArea fx:id="newReplacedTextTextArea" editable="false" layoutX="144.0" layoutY="229.0" prefHeight="115.0" prefWidth="293.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="11.0" layoutY="25.0" prefHeight="17.0" prefWidth="125.0" text="Regex to test:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label alignment="CENTER_RIGHT" focusTraversable="false" layoutX="8.0" layoutY="80.0" prefHeight="17.0" prefWidth="131.0" text="Text to match against:" />
+      <Label alignment="CENTER_RIGHT" layoutX="8.0" layoutY="196.0" prefHeight="17.0" prefWidth="131.0" text="Replace match with:" />
+      <Label alignment="CENTER_RIGHT" layoutX="8.0" layoutY="253.0" prefHeight="17.0" prefWidth="131.0" text="New replaced text:" />
+      <Button fx:id="replaceButtonPressed" layoutX="142.0" layoutY="356.0" mnemonicParsing="false" onAction="#replaceButtonPressed" prefHeight="26.0" prefWidth="293.0" text="Replace" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
